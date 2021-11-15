@@ -1,0 +1,26 @@
+/* основной цвет текста #757575 */
+$main-text-color: #757575;
+/* вторичный цвет текста #212121 */
+$secondary-text-color: #212121;
+/* акцент #2196F3 */
+$accent-color: #2196f3;
+/* цвет лого */
+$logo-text-color: #000000;
+/* вторичный цвет заливки #FFFFFF */
+$secondary-background-color: #ffffff;
+/* цвет текста героя */
+$hero-text-color: #ffffff;
+/* заливка героя ##c4c4c4 */
+$hero-background-color: #c4c4c4;
+/* заливка кнопки героя при фокусе #188CE8 */
+$hero-button-hover-color: #188ce8;
+/* заливка секции команды */
+$team-background-color: #f5f4fa;
+/* цвет иконок #AFB1B8*/
+$icon-color: #afb1b8;
+/* заливка футера #2F303A*/
+$footer-backgorund-color: #2f303a;
+/* цвет ссылок в футере */
+$footer-link-color: rgba(255, 255, 255, 0.6);
+/* функция распределения времени для анимаций */
+$animation-cubic: cubic-bezier(0.4, 0, 0.2, 1);

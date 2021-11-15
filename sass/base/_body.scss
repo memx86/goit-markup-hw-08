@@ -1,0 +1,17 @@
+body {
+  color: $main-text-color;
+  font-family: roboto, -apple-system, BlinkMacSystemFont, avenir next, avenir, segoe ui,
+    helvetica neue, helvetica, Ubuntu, noto, arial, sans-serif;
+  font-size: 14px;
+  line-height: 1.71;
+  letter-spacing: 0.03em;
+}
+/* обнуление внешних отступов */
+h1,
+h2,
+h3,
+ul,
+p {
+  margin-top: 0;
+  margin-bottom: 0;
+}

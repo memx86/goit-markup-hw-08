@@ -1,0 +1,30 @@
+/* стили особенностей */
+.feature {
+  padding-bottom: 47px;
+}
+.feature__list {
+  display: flex;
+}
+.feature__subtitle {
+  margin-bottom: 10px;
+  font-weight: 700;
+  font-size: inherit;
+  line-height: 1.14;
+  text-transform: uppercase;
+  color: $secondary-text-color;
+}
+.feature__item {
+  width: calc((100% - 90px) / 4);
+  &:not(:last-child) {
+    margin-right: 30px;
+  }
+}
+.feature__icon {
+  padding-left: 100px;
+  padding-right: 100px;
+  padding-top: 25px;
+  padding-bottom: 25px;
+  margin-bottom: 30px;
+  background: $team-background-color;
+  border-radius: 4px;
+}

@@ -1,0 +1,33 @@
+/* стили футера */
+@import './join';
+@import './subscribe';
+.footer {
+  max-width: 1600px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 60px 0;
+  background-color: $footer-backgorund-color;
+}
+.footer__text {
+  color: $hero-text-color;
+  font-style: normal;
+}
+.footer__address {
+  margin-top: 20px;
+}
+.footer__link {
+  margin-top: 9px;
+  color: $footer-link-color;
+  font-style: normal;
+  transition: color 250ms $animation-cubic;
+  &:hover,
+  &:focus {
+    color: $accent-color;
+  }
+}
+.footer__title {
+  margin-bottom: 20px;
+  font-size: inherit;
+  line-height: 1.14;
+  text-transform: uppercase;
+}
