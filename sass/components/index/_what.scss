@@ -1,5 +1,8 @@
 /* стили чем мы занимаемся*/
 .what {
+  @media screen and (max-width: 1199px) {
+    display: none;
+  }
   padding-top: 47px;
 }
 .what__list {

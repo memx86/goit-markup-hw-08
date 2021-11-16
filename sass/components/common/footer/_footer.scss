@@ -8,6 +8,13 @@
   padding: 60px 0;
   background-color: $footer-backgorund-color;
 }
+.footer__container {
+  display: flex;
+  @media screen and (max-width: 767px) {
+    flex-direction: column;
+    text-align: center;
+  }
+}
 .footer__text {
   color: $hero-text-color;
   font-style: normal;
@@ -16,7 +23,7 @@
   margin-top: 20px;
 }
 .footer__link {
-  margin-top: 9px;
+  margin-top: 8px;
   color: $footer-link-color;
   font-style: normal;
   transition: color 250ms $animation-cubic;

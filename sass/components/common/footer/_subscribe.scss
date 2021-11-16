@@ -1,15 +1,22 @@
 /* секция подпишитесь */
 .subscribe {
+  @media screen and (max-width: 767px) {
+    margin-top: 60px;
+  }
   padding-top: 12px;
-  width: 570px;
+  // width: 570px;
   color: $hero-text-color;
 }
-.subscribe__form {
-  display: flex;
-}
+// .subscribe__form {
+//   display: flex;
+// }
 .subscribe__input {
   margin-right: 12px;
-  width: 358px;
+  // width: 358px;
+  @media screen and (max-width: 767px) {
+    width: 100%;
+    margin-bottom: 20px;
+  }
   padding-left: 16px;
   padding-top: 15px;
   padding-bottom: 15px;
@@ -25,7 +32,7 @@
   }
 }
 .subscribe__button {
-  display: flex;
+  display: inline-flex;
   width: 200px;
   padding-top: 10px;
   padding-bottom: 10px;

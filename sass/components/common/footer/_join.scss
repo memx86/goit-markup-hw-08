@@ -1,8 +1,11 @@
 /* секция присоединяйтесь */
 .join {
-  margin-left: 70px;
-  margin-right: 93px;
-  padding-top: 12px;
+  // margin-left: 70px;
+  // margin-right: 93px;
+  // padding-top: 12px;
+  @media screen and (max-width: 767px) {
+    margin-top: 60px;
+  }
   color: $hero-text-color;
 }
 .join__item {

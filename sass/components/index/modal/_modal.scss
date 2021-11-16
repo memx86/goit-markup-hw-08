@@ -22,8 +22,15 @@
   position: absolute;
   top: 50%;
   left: 50%;
-  width: 528px;
-  height: 581px;
+  @media screen and (max-width: 479px) {
+    width: calc(100% - 30px);
+  }
+  @media screen and (max-width: 1199px) {
+    width: 450px;
+  }
+  @media screen and (min-width: 1200px) {
+    width: 528px;
+  }
   padding: 40px;
   transform: translate(-50%, -50%) scale(1);
   transition: transform 250ms $animation-cubic;
@@ -34,12 +41,21 @@
   .backdrop.is-hidden & {
     transform: translate(-50%, -50%) scale(1.5);
   }
+  font-size: 12px;
+  line-height: 1.14;
+  letter-spacing: 0.01em;
 }
 .modal__title {
   margin-bottom: 12px;
+  font-weight: 700;
   font-size: 20px;
   line-height: 1.15;
+  letter-spacing: 0.03em;
   color: $secondary-text-color;
+  @media screen and (max-width: 1199px) {
+    text-align: center;
+    line-height: 1.5;
+  }
 }
 .modal__item {
   position: relative;
@@ -103,6 +119,24 @@
 /* Принять условия */
 @import './accept';
 
+/* кнопка Отправить */
+.modal__accept {
+  display: block;
+  margin-top: 30px;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 16px;
+  line-height: 1.87;
+  letter-spacing: 0.06em;
+  padding: 10px 55px 10px 56px;
+  color: $hero-text-color;
+  background-color: $accent-color;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+  transition: background-color 250ms $animation-cubic;
+  &:hover {
+    background-color: $hero-button-hover-color;
+  }
+}
 /* кнопка закрытия */
 .modal__close {
   position: absolute;

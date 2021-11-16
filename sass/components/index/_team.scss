@@ -5,21 +5,28 @@
   line-height: 1.19;
   text-align: center;
 }
-.team__list {
-  display: flex;
-}
+// .team__list {
+//   display: flex;
+// }
 /* стили карточки команды */
 .team__item {
-  width: calc((100% - 90px) / 4);
-  padding-bottom: 30px;
+  @media screen and (max-width: 767px) {
+    &:not(:last-child) {
+      margin-bottom: 30px;
+    }
+  }
+  @media screen and (min-width: 768px) {
+    width: calc((100% - 90px) / 4);
+    padding-bottom: 30px;
+    &:not(:last-child) {
+      margin-right: 30px;
+    }
+  }
   border-bottom: 1px solid transparent;
   border-radius: 4px;
   background-color: $secondary-background-color;
   box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
     0px 2px 1px rgba(0, 0, 0, 0.2);
-  &:not(:last-child) {
-    margin-right: 30px;
-  }
 }
 /* имя члена команды */
 .team__subtitle {
