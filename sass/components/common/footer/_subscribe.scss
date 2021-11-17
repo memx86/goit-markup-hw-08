@@ -4,18 +4,23 @@
     margin-top: 60px;
   }
   padding-top: 12px;
-  // width: 570px;
   color: $hero-text-color;
 }
-// .subscribe__form {
-//   display: flex;
-// }
+
+.subscribe__form {
+  @media screen and (min-width: 1200px) {
+    display: flex;
+  }
+}
 .subscribe__input {
   margin-right: 12px;
-  // width: 358px;
+
   @media screen and (max-width: 1199px) {
     width: 100%;
     margin-bottom: 20px;
+  }
+  @media screen and (min-width: 1200px) {
+    width: 358px;
   }
   padding-left: 16px;
   padding-top: 15px;
