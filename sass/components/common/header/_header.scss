@@ -86,17 +86,24 @@
     padding-left: 40px;
     padding-bottom: 48px;
   }
+  @media screen and (min-width: 768px) {
+    display: flex;
+    justify-content: space-between;
+    margin-left: 75px;
+  }
 }
-// .header__nav {
-//   display: flex;
-//   align-items: center;
-//   margin-right: auto;
-// }
-
+.header__nav {
+  @media screen and (min-width: 768px) {
+    display: flex;
+    align-items: center;
+  }
+}
 .header__list {
-  // display: flex;
   @media screen and (max-width: 767px) {
     font-size: 40px;
+  }
+  @media screen and (min-width: 768px) {
+    display: flex;
   }
   font-weight: 500;
   line-height: 1.14;
@@ -110,14 +117,18 @@
       margin-bottom: 32px;
     }
   }
-  // &:not(:last-child) {
-  //   margin-right: 50px;
-  // }
+  @media screen and (min-width: 768px) {
+    &:not(:last-child) {
+      margin-right: 50px;
+    }
+  }
 }
 .header__link {
   display: block;
-  // padding-top: 32px;
-  // padding-bottom: 32px;
+  @media screen and (min-width: 768px) {
+    padding-top: 32px;
+    padding-bottom: 32px;
+  }
   color: $secondary-text-color;
   transition: color 250ms $animation-cubic;
   &:hover,
@@ -152,6 +163,22 @@
     justify-content: flex-end;
     margin-top: auto;
   }
+  @media screen and (min-width: 768px) and (max-width: 1199px) {
+    display: block;
+    margin-left: 85px;
+    padding-top: 21px;
+    padding-bottom: 21px;
+    font-size: 12px;
+    line-height: 1.17;
+  }
+}
+.header__item--contacts {
+  @media screen and (min-width: 768px) and (max-width: 1199px) {
+    &:not(:last-child) {
+      margin-bottom: 10px;
+      margin-right: 0;
+    }
+  }
 }
 .header__link--contacts {
   @media screen and (max-width: 767px) {
@@ -159,6 +186,9 @@
   }
   // display: inline-flex;
   // align-items: center;
+  @media screen and (min-width: 768px) and (max-width: 1199px) {
+    padding: 0;
+  }
   color: $main-text-color;
 }
 .header__icon {
@@ -166,7 +196,32 @@
   @media screen and (max-width: 767px) {
     display: none;
   }
-  margin-right: 10px;
+  @media screen and (min-width: 768px) and (max-width: 1199px) {
+    margin-right: 8px;
+  }
+  @media screen and (min-width: 1200px) {
+    margin-right: 10px;
+  }
+}
+.header__icon--envelope {
+  @media screen and (min-width: 768px) and (max-width: 1199px) {
+    width: 14px;
+    height: 10px;
+  }
+  @media screen and (min-width: 1200px) {
+    width: 16px;
+    height: 12px;
+  }
+}
+.header__icon--smartphone {
+  @media screen and (min-width: 768px) and (max-width: 1199px) {
+    width: 10px;
+    height: 14px;
+  }
+  @media screen and (min-width: 1200px) {
+    width: 12px;
+    height: 16px;
+  }
 }
 // Соцсети на мобильном
 .mobile__list {

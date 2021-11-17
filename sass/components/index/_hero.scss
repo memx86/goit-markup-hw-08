@@ -1,10 +1,12 @@
 /* стили героя */
 .hero {
-  // padding-top: 200px;
-  // padding-bottom: 200px;
-  @media screen and (max-width: 767px) {
+  @media screen and (max-width: 1199px) {
     padding-top: 118px;
     padding-bottom: 118px;
+  }
+  @media screen and (min-width: 1200px) {
+    padding-top: 200px;
+    padding-bottom: 200px;
   }
   max-width: 1600px;
   margin-left: auto;

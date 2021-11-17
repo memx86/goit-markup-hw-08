@@ -5,9 +5,15 @@
   line-height: 1.19;
   text-align: center;
 }
-// .team__list {
-//   display: flex;
-// }
+.team__list {
+  @media screen and (min-width: 768px) {
+    display: flex;
+  }
+  @media screen and (min-width: 768px) and (max-width: 1199px) {
+    flex-wrap: wrap;
+  }
+}
+
 /* стили карточки команды */
 .team__item {
   @media screen and (max-width: 767px) {
@@ -15,7 +21,16 @@
       margin-bottom: 30px;
     }
   }
-  @media screen and (min-width: 768px) {
+  @media screen and (min-width: 768px) and (max-width: 1199px) {
+    width: calc((100% - 30px) / 2);
+    &:not(:nth-last-child(-n + 2)) {
+      margin-bottom: 30px;
+    }
+    &:nth-child(2n + 1) {
+      margin-right: 30px;
+    }
+  }
+  @media screen and (min-width: 1200px) {
     width: calc((100% - 90px) / 4);
     padding-bottom: 30px;
     &:not(:last-child) {

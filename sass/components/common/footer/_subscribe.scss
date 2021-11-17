@@ -1,6 +1,6 @@
 /* секция подпишитесь */
 .subscribe {
-  @media screen and (max-width: 767px) {
+  @media screen and (max-width: 1199px) {
     margin-top: 60px;
   }
   padding-top: 12px;
@@ -13,7 +13,7 @@
 .subscribe__input {
   margin-right: 12px;
   // width: 358px;
-  @media screen and (max-width: 767px) {
+  @media screen and (max-width: 1199px) {
     width: 100%;
     margin-bottom: 20px;
   }
