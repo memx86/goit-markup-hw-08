@@ -24,14 +24,17 @@
   left: 50%;
   @media screen and (max-width: 479px) {
     width: calc(100% - 30px);
+    padding: 5vw;
   }
-  @media screen and (max-width: 1199px) {
+  @media screen and (min-width: 480px) {
+    padding: 40px;
+  }
+  @media screen and (min-width: 480px) and (max-width: 1199px) {
     width: 450px;
   }
   @media screen and (min-width: 1200px) {
     width: 528px;
   }
-  padding: 40px;
   transform: translate(-50%, -50%) scale(1);
   transition: transform 250ms $animation-cubic;
   background-color: $hero-text-color;
