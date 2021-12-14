@@ -1469,6 +1469,9 @@ button {
   display: flex;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   margin-left: auto;
   margin-right: auto;
   gap: var(--gap-size);
@@ -1479,7 +1482,7 @@ button {
       flex-basis: calc( 100% / var(--column-number) - var(--gap-size) * (var(--column-number) - 1) / var(--column-number));
 }
 
-@media screen and (max-width: 767px) {
+@media screen and (min-width: 400px) and (max-width: 767px) {
   .clients__item {
     --column-number: 2;
   }
@@ -1565,7 +1568,7 @@ button {
 
 .subscribe__input {
   margin-right: 12px;
-  width: 450px;
+  width: 100%;
   padding-left: 16px;
   padding-top: 15px;
   padding-bottom: 15px;
@@ -1577,6 +1580,12 @@ button {
   font-size: 16px;
   line-height: 1.25;
   color: inherit;
+}
+
+@media screen and (min-width: 480px) {
+  .subscribe__input {
+    width: 450px;
+  }
 }
 
 @media screen and (max-width: 1199px) {

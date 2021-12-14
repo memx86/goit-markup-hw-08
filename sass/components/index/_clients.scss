@@ -10,6 +10,7 @@
 .clients__list {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
   margin-left: auto;
   margin-right: auto;
   gap: var(--gap-size);
@@ -19,7 +20,7 @@
     100% / var(--column-number) - var(--gap-size) * (var(--column-number) - 1) /
       var(--column-number)
   );
-  @media screen and (max-width: 767px) {
+  @media screen and (min-width: 400px) and (max-width: 767px) {
     --column-number: 2;
   }
   @media screen and (min-width: 768px) and (max-width: 1199px) {
