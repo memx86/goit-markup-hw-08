@@ -36,10 +36,43 @@
   overflow: hidden;
 }
 
-/* закругленные края кнопок */
-.button {
+/* общие стили кнопок */
+.subscribe__button {
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0;
+  min-width: 200px;
+  min-height: 50px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-family: inherit;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 1.87;
+  letter-spacing: 0.06em;
   border: 1px solid transparent;
   border-radius: 4px;
+  color: #ffffff;
+  background-color: #2196f3;
+  -webkit-box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+          box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+  -webkit-transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.subscribe__button:hover, .subscribe__button:focus {
+  background-color: #188ce8;
+}
+
+.subscribe__button:focus {
+  outline: auto;
 }
 
 /* контейнер для центрирования и ограничения контента по ширине */
@@ -69,12 +102,6 @@
 }
 
 /* контейнер секций */
-.section {
-  max-width: 1600px;
-  margin-left: auto;
-  margin-right: auto;
-}
-
 @media screen and (max-width: 1199px) {
   .section {
     padding-top: 60px;
@@ -392,11 +419,12 @@ p {
   margin-bottom: 0;
 }
 
+button {
+  cursor: pointer;
+}
+
 /* стили шапки */
 .header {
-  max-width: 1600px;
-  margin-left: auto;
-  margin-right: auto;
   background-color: #ffffff;
   border-bottom: 1px solid #ececec;
 }
@@ -596,6 +624,7 @@ p {
 
 .header__link:hover, .header__link:focus {
   color: #2196f3;
+  outline: none;
 }
 
 /* выделение текущей страницы в навигации */
@@ -822,7 +851,6 @@ p {
 }
 
 .filter__button {
-  /* у самой кнопки с классом .button граница 1 px */
   padding-top: 5px;
   padding-bottom: 5px;
   padding-left: 21px;
@@ -832,7 +860,8 @@ p {
   font-size: 16px;
   line-height: 1.6;
   letter-spacing: 0.03em;
-  cursor: pointer;
+  border: 1px solid transparent;
+  border-radius: 4px;
   color: #212121;
   background-color: #f5f4fa;
   -webkit-transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1), background-color 250ms cubic-bezier(0.4, 0, 0.2, 1), -webkit-box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
@@ -846,6 +875,7 @@ p {
   background-color: #2196f3;
   -webkit-box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08), 0px 2px 2px rgba(0, 0, 0, 0.12);
           box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08), 0px 2px 2px rgba(0, 0, 0, 0.12);
+  outline: none;
 }
 
 /* стили блоков портфолио */
@@ -904,6 +934,17 @@ p {
           box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06), 1px 4px 6px rgba(0, 0, 0, 0.16);
 }
 
+.portfolio__link {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  height: 100%;
+}
+
 .thumb {
   position: relative;
   overflow: hidden;
@@ -912,9 +953,7 @@ p {
 .portfolio__description {
   position: absolute;
   left: 0;
-  top: 200%;
-  -webkit-transform: translate(0, -100%);
-          transform: translate(0, -100%);
+  top: 100%;
   width: 100%;
   height: 100%;
   padding: 63px 24px;
@@ -926,11 +965,12 @@ p {
   transition: -webkit-transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
   transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
   transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1), -webkit-transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  overflow-y: auto;
 }
 
 .portfolio__item:hover .portfolio__description {
-  -webkit-transform: translate(0, -100%) translateY(-100%);
-          transform: translate(0, -100%) translateY(-100%);
+  -webkit-transform: translateY(-100%);
+          transform: translateY(-100%);
 }
 
 /* название продукта */
@@ -956,6 +996,9 @@ p {
   padding-bottom: 20px;
   padding-right: 24px;
   padding-left: 24px;
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
   border-left: 1px solid #eeeeee;
   border-right: 1px solid #eeeeee;
   border-bottom: 1px solid #eeeeee;
@@ -971,7 +1014,12 @@ p {
           justify-content: center;
 }
 
-.social__item {
+.social__item:not(:last-child) {
+  margin-right: 10px;
+}
+
+.social__link {
+  display: block;
   width: 44px;
   height: 44px;
   padding: 12px;
@@ -982,17 +1030,10 @@ p {
   transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1), background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.social__item:not(:last-child) {
-  margin-right: 10px;
-}
-
-.social__item:hover {
+.social__link:hover, .social__link:focus {
   background-color: #2196f3;
   color: #ffffff;
-}
-
-.social__link {
-  color: inherit;
+  outline: none;
 }
 
 .social__icon {
@@ -1012,7 +1053,7 @@ p {
   }
 }
 
-.join__item {
+.social__link--join {
   color: #ffffff;
   background-color: rgba(255, 255, 255, 0.1);
 }
@@ -1081,28 +1122,6 @@ p {
   color: rgba(255, 255, 255, 0.6);
 }
 
-.subscribe__button {
-  display: -webkit-inline-box;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  width: 200px;
-  padding-top: 10px;
-  padding-bottom: 10px;
-  font-size: 16px;
-  line-height: 1.87;
-  font-weight: 700;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  color: inherit;
-  background-color: #2196f3;
-  -webkit-box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
-          box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
-}
-
 .subscribe__icon {
   margin-left: 10px;
   width: 24px;
@@ -1110,9 +1129,6 @@ p {
 }
 
 .footer {
-  max-width: 1600px;
-  margin-left: auto;
-  margin-right: auto;
   padding: 60px 0;
   background-color: #2f303a;
 }
@@ -1173,6 +1189,7 @@ p {
 }
 
 .footer__link {
+  display: block;
   margin-top: 8px;
   color: rgba(255, 255, 255, 0.6);
   font-style: normal;
@@ -1182,6 +1199,7 @@ p {
 
 .footer__link:hover, .footer__link:focus {
   color: #2196f3;
+  outline: none;
 }
 
 .footer__title {

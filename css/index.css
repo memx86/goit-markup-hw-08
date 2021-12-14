@@ -36,10 +36,43 @@
   overflow: hidden;
 }
 
-/* закругленные края кнопок */
-.button {
+/* общие стили кнопок */
+.hero__button, .modal__accept, .subscribe__button {
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0;
+  min-width: 200px;
+  min-height: 50px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-family: inherit;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 1.87;
+  letter-spacing: 0.06em;
   border: 1px solid transparent;
   border-radius: 4px;
+  color: #ffffff;
+  background-color: #2196f3;
+  -webkit-box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+          box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+  -webkit-transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.hero__button:hover, .modal__accept:hover, .subscribe__button:hover, .hero__button:focus, .modal__accept:focus, .subscribe__button:focus {
+  background-color: #188ce8;
+}
+
+.hero__button:focus, .modal__accept:focus, .subscribe__button:focus {
+  outline: auto;
 }
 
 /* контейнер для центрирования и ограничения контента по ширине */
@@ -69,12 +102,6 @@
 }
 
 /* контейнер секций */
-.section {
-  max-width: 1600px;
-  margin-left: auto;
-  margin-right: auto;
-}
-
 @media screen and (max-width: 1199px) {
   .section {
     padding-top: 60px;
@@ -392,11 +419,12 @@ p {
   margin-bottom: 0;
 }
 
+button {
+  cursor: pointer;
+}
+
 /* стили шапки */
 .header {
-  max-width: 1600px;
-  margin-left: auto;
-  margin-right: auto;
   background-color: #ffffff;
   border-bottom: 1px solid #ececec;
 }
@@ -596,6 +624,7 @@ p {
 
 .header__link:hover, .header__link:focus {
   color: #2196f3;
+  outline: none;
 }
 
 /* выделение текущей страницы в навигации */
@@ -856,39 +885,24 @@ p {
   margin-left: auto;
   margin-right: auto;
   font-weight: 900;
+  font-size: 26px;
+  line-height: 1.62;
   letter-spacing: 0.06em;
   text-transform: uppercase;
 }
 
-@media screen and (max-width: 767px) {
+@media screen and (min-width: 480px) {
   .hero__title {
-    font-size: 26px;
-    line-height: 1.62;
+    max-width: 360px;
   }
 }
 
-.hero__button {
-  /* у самой кнопки с классом .button граница 1 px */
-  padding-left: 31px;
-  padding-right: 31px;
-  padding-top: 9px;
-  padding-bottom: 9px;
-  font-family: inherit;
-  font-weight: 700;
-  font-size: 16px;
-  line-height: 1.87;
-  letter-spacing: 0.06em;
-  cursor: pointer;
-  color: #ffffff;
-  background-color: #2196f3;
-  -webkit-filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
-          filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
-  -webkit-transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
-  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.hero__button:hover, .hero__button:focus {
-  background-color: #188ce8;
+@media screen and (min-width: 1200px) {
+  .hero__title {
+    max-width: 696px;
+    font-size: 44px;
+    line-height: 1.36;
+  }
 }
 
 .backdrop {
@@ -902,8 +916,8 @@ p {
   margin-right: auto;
   background-color: rgba(0, 0, 0, 0.2);
   opacity: 1;
-  -webkit-transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
-  transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  -webkit-transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1), visibility 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1), visibility 250ms cubic-bezier(0.4, 0, 0.2, 1);
   overflow-y: scroll;
   /* прячет модальное окно */
 }
@@ -911,6 +925,7 @@ p {
 .backdrop.is-hidden {
   pointer-events: none;
   opacity: 0;
+  visibility: hidden;
 }
 
 /* Модальное окно */
@@ -949,19 +964,14 @@ p {
 @media screen and (min-width: 480px) and (max-width: 1199px) {
   .modal {
     width: 450px;
+    min-height: 609px;
   }
 }
 
 @media screen and (min-width: 1200px) {
   .modal {
     width: 528px;
-  }
-}
-
-@media screen and (orientation: landscape) {
-  .modal {
-    -webkit-transform: translate(-50%, -25%) scale(1);
-            transform: translate(-50%, -25%) scale(1);
+    min-height: 581px;
   }
 }
 
@@ -1127,24 +1137,7 @@ p {
 
 /* кнопка Отправить */
 .modal__accept {
-  display: block;
   margin-top: 30px;
-  margin-left: auto;
-  margin-right: auto;
-  font-size: 16px;
-  line-height: 1.87;
-  letter-spacing: 0.06em;
-  padding: 10px 55px 10px 56px;
-  color: #ffffff;
-  background-color: #2196f3;
-  -webkit-box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
-          box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
-  -webkit-transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
-  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.modal__accept:hover {
-  background-color: #188ce8;
 }
 
 /* кнопка закрытия */
@@ -1165,8 +1158,9 @@ p {
   transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.modal__close:hover {
+.modal__close:hover, .modal__close:focus {
   color: #2196f3;
+  outline: none;
 }
 
 /* стили особенностей */
@@ -1435,7 +1429,12 @@ p {
           justify-content: center;
 }
 
-.social__item {
+.social__item:not(:last-child) {
+  margin-right: 10px;
+}
+
+.social__link {
+  display: block;
   width: 44px;
   height: 44px;
   padding: 12px;
@@ -1446,17 +1445,10 @@ p {
   transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1), background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.social__item:not(:last-child) {
-  margin-right: 10px;
-}
-
-.social__item:hover {
+.social__link:hover, .social__link:focus {
   background-color: #2196f3;
   color: #ffffff;
-}
-
-.social__link {
-  color: inherit;
+  outline: none;
 }
 
 .social__icon {
@@ -1558,7 +1550,7 @@ p {
   }
 }
 
-.join__item {
+.social__link--join {
   color: #ffffff;
   background-color: rgba(255, 255, 255, 0.1);
 }
@@ -1627,28 +1619,6 @@ p {
   color: rgba(255, 255, 255, 0.6);
 }
 
-.subscribe__button {
-  display: -webkit-inline-box;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  width: 200px;
-  padding-top: 10px;
-  padding-bottom: 10px;
-  font-size: 16px;
-  line-height: 1.87;
-  font-weight: 700;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  color: inherit;
-  background-color: #2196f3;
-  -webkit-box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
-          box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
-}
-
 .subscribe__icon {
   margin-left: 10px;
   width: 24px;
@@ -1656,9 +1626,6 @@ p {
 }
 
 .footer {
-  max-width: 1600px;
-  margin-left: auto;
-  margin-right: auto;
   padding: 60px 0;
   background-color: #2f303a;
 }
@@ -1719,6 +1686,7 @@ p {
 }
 
 .footer__link {
+  display: block;
   margin-top: 8px;
   color: rgba(255, 255, 255, 0.6);
   font-style: normal;
@@ -1728,6 +1696,7 @@ p {
 
 .footer__link:hover, .footer__link:focus {
   color: #2196f3;
+  outline: none;
 }
 
 .footer__title {

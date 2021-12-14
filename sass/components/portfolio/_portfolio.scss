@@ -38,6 +38,11 @@
       1px 4px 6px rgba(0, 0, 0, 0.16);
   }
 }
+.portfolio__link {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
 .thumb {
   position: relative;
   overflow: hidden;
@@ -45,8 +50,7 @@
 .portfolio__description {
   position: absolute;
   left: 0;
-  top: 200%;
-  transform: translate(0, -100%);
+  top: 100%;
   width: 100%;
   height: 100%;
   padding: 63px 24px;
@@ -55,8 +59,9 @@
   font-size: 18px;
   line-height: 1.56;
   transition: transform 250ms $animation-cubic;
+  overflow-y: auto;
   .portfolio__item:hover & {
-    transform: translate(0, -100%) translateY(-100%);
+    transform: translateY(-100%);
   }
 }
 /* название продукта */
@@ -80,6 +85,7 @@
   padding-bottom: 20px;
   padding-right: 24px;
   padding-left: 24px;
+  flex-grow: 1;
   border-left: 1px solid #eeeeee;
   border-right: 1px solid #eeeeee;
   border-bottom: 1px solid #eeeeee;

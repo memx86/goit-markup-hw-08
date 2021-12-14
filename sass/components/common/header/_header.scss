@@ -1,8 +1,5 @@
 /* стили шапки */
 .header {
-  max-width: 1600px;
-  margin-left: auto;
-  margin-right: auto;
   background-color: $secondary-background-color;
   border-bottom: 1px solid #ececec;
 }
@@ -139,6 +136,7 @@
   &:hover,
   &:focus {
     color: $accent-color;
+    outline: none;
   }
 }
 /* выделение текущей страницы в навигации */

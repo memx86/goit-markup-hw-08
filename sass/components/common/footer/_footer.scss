@@ -2,9 +2,6 @@
 @import './join';
 @import './subscribe';
 .footer {
-  max-width: 1600px;
-  margin-left: auto;
-  margin-right: auto;
   padding: 60px 0;
   background-color: $footer-backgorund-color;
 }
@@ -35,6 +32,7 @@
   margin-top: 20px;
 }
 .footer__link {
+  display: block;
   margin-top: 8px;
   color: $footer-link-color;
   font-style: normal;
@@ -42,6 +40,7 @@
   &:hover,
   &:focus {
     color: $accent-color;
+    outline: none;
   }
 }
 .footer__title {
