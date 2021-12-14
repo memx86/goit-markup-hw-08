@@ -8,6 +8,7 @@
 .team__list {
   @media screen and (min-width: 768px) {
     display: flex;
+    gap: var(--gap-size);
   }
   @media screen and (min-width: 768px) and (max-width: 1199px) {
     flex-wrap: wrap;
@@ -22,21 +23,20 @@
     }
   }
   @media screen and (min-width: 768px) and (max-width: 1199px) {
-    width: calc((100% - 30px) / 2);
-    &:not(:nth-last-child(-n + 2)) {
-      margin-bottom: 30px;
-    }
-    &:nth-child(2n + 1) {
-      margin-right: 30px;
-    }
+    --column-number: 2;
+    flex-basis: calc(
+      100% / var(--column-number) - var(--gap-size) * (var(--column-number) - 1) /
+        var(--column-number)
+    );
   }
   @media screen and (min-width: 1200px) {
-    width: calc((100% - 90px) / 4);
-    padding-bottom: 30px;
-    &:not(:last-child) {
-      margin-right: 30px;
-    }
+    --column-number: 4;
+    flex-basis: calc(
+      100% / var(--column-number) - var(--gap-size) * (var(--column-number) - 1) /
+        var(--column-number)
+    );
   }
+  padding-bottom: 24px;
   border-bottom: 1px solid transparent;
   border-radius: 4px;
   background-color: $secondary-background-color;

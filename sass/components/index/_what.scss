@@ -7,15 +7,16 @@
 }
 .what__list {
   display: flex;
+  gap: var(--gap-size);
 }
 /* карточка  */
 .what__item {
-  width: calc((100% - 60px) / 3);
+  flex-basis: calc(
+    100% / var(--column-number) - var(--gap-size) * (var(--column-number) - 1) /
+      var(--column-number)
+  );
   height: 294px;
   perspective: 600px;
-  &:not(:last-child) {
-    margin-right: 30px;
-  }
 }
 /* контейнер для содержимого карточки */
 .what__card {
