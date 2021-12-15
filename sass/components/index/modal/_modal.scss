@@ -129,11 +129,6 @@
 /* Принять условия */
 @import './accept';
 
-/* кнопка Отправить */
-.modal__accept {
-  @extend %button;
-  margin-top: 30px;
-}
 /* кнопка закрытия */
 .modal__close {
   position: absolute;

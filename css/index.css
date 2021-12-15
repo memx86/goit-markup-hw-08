@@ -1099,10 +1099,18 @@ button {
 }
 
 .accept__checkbox {
-  position: relative;
   margin-right: 7px;
   width: 16px;
   height: 15px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   border: 2px solid #212121;
   border-radius: 2px;
   color: #ffffff;
@@ -1112,9 +1120,6 @@ button {
 }
 
 .accept__icon {
-  position: absolute;
-  left: -25%;
-  top: -20%;
   width: 16px;
   height: 15px;
   opacity: 0;
@@ -1614,6 +1619,11 @@ button {
 
 .subscribe__input::placeholder {
   color: rgba(255, 255, 255, 0.6);
+}
+
+.subscribe__input:focus, .subscribe__input:not(:placeholder-shown) {
+  outline: none;
+  border-color: #2196f3;
 }
 
 .subscribe__icon {

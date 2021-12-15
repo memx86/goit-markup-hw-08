@@ -37,6 +37,11 @@
   &::placeholder {
     color: rgba(255, 255, 255, 0.6);
   }
+  &:focus,
+  &:not(:placeholder-shown) {
+    outline: none;
+    border-color: $accent-color;
+  }
 }
 .subscribe__button {
   @extend %button;
