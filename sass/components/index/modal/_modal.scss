@@ -24,6 +24,9 @@
   position: absolute;
   top: 50%;
   left: 50%;
+  @media screen and (max-height: 629px) {
+    transform: translate(-50%, -25%) scale(1);
+  }
   @media screen and (max-width: 479px) {
     width: calc(100% - 30px);
     padding: 5vw;

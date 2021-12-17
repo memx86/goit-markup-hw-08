@@ -954,6 +954,13 @@ button {
   letter-spacing: 0.01em;
 }
 
+@media screen and (max-height: 629px) {
+  .modal {
+    -webkit-transform: translate(-50%, -25%) scale(1);
+            transform: translate(-50%, -25%) scale(1);
+  }
+}
+
 @media screen and (max-width: 479px) {
   .modal {
     width: calc(100% - 30px);
