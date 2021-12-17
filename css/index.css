@@ -1,4 +1,12 @@
 @charset "UTF-8";
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@700&family=Roboto:wght@400;500;700;900&display=swap");
+:root {
+  --column-number: 3;
+  --gap-size: 30px;
+  --scrollbarBG: #cfd8dc;
+  --thumbBG: #90a4ae;
+}
+
 /* основной цвет текста #757575 */
 /* вторичный цвет текста #212121 */
 /* акцент #2196F3 */
@@ -13,7 +21,6 @@
 /* цвет ссылок в футере */
 /* функция распределения времени для анимаций */
 /* убирает точки и левый отступ у списков*/
-@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@700&family=Roboto:wght@400;500;700;900&display=swap");
 .list {
   list-style: none;
   padding: 0;
@@ -397,22 +404,32 @@ summary {
   display: list-item;
 }
 
-:root {
-  /* для карточек */
-  --column-number: 3;
-  --gap-size: 30px;
-}
-
 body {
   color: #757575;
   font-family: roboto, -apple-system, BlinkMacSystemFont, avenir next, avenir, segoe ui, helvetica neue, helvetica, Ubuntu, noto, arial, sans-serif;
   font-size: 14px;
   line-height: 1.71;
   letter-spacing: 0.03em;
+  scrollbar-width: thin;
+  scrollbar-color: var(--thumbBG) var(--scrollbarBG);
 }
 
 body.modal-open {
   overflow: hidden;
+}
+
+body::-webkit-scrollbar {
+  width: 11px;
+}
+
+body::-webkit-scrollbar-track {
+  background: var(--scrollbarBG);
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: var(--thumbBG);
+  border-radius: 6px;
+  border: 3px solid var(--scrollbarBG);
 }
 
 /* обнуление внешних отступов */
