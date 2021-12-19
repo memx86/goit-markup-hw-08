@@ -477,6 +477,12 @@ button {
   }
 }
 
+@media screen and (min-width: 768px) {
+  .header__logo {
+    margin-right: 93px;
+  }
+}
+
 .header__button {
   width: 40px;
   height: 40px;
@@ -579,8 +585,7 @@ button {
     -webkit-box-pack: justify;
         -ms-flex-pack: justify;
             justify-content: space-between;
-    width: 66.6666%;
-    margin-left: auto;
+    width: 100%;
   }
 }
 
@@ -971,13 +976,6 @@ button {
   letter-spacing: 0.01em;
 }
 
-@media screen and (max-height: 629px) {
-  .modal {
-    -webkit-transform: translate(-50%, -25%) scale(1);
-            transform: translate(-50%, -25%) scale(1);
-  }
-}
-
 @media screen and (max-width: 479px) {
   .modal {
     width: calc(100% - 30px);
@@ -1002,6 +1000,13 @@ button {
   .modal {
     width: 528px;
     min-height: 581px;
+  }
+}
+
+@media screen and (max-height: 629px) {
+  .modal {
+    -webkit-transform: translate(-50%, -25%) scale(1);
+            transform: translate(-50%, -25%) scale(1);
   }
 }
 
@@ -1116,7 +1121,7 @@ button {
           align-items: center;
 }
 
-@media screen and (min-width: 1199px) {
+@media screen and (min-width: 1200px) {
   .accept__item {
     padding-left: 14px;
   }
@@ -1161,9 +1166,15 @@ button {
 }
 
 .accept__label {
-  font-size: 14px;
+  font-size: 12px;
   line-height: 1.71;
   letter-spacing: 0.03em;
+}
+
+@media screen and (min-width: 1200px) {
+  .accept__label {
+    font-size: 14px;
+  }
 }
 
 .accept__link {
@@ -1205,12 +1216,19 @@ button {
   }
 }
 
-@media screen and (min-width: 768px) {
+.feature__list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: var(--gap-size);
+}
+
+@media screen and (max-width: 767px) {
   .feature__list {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    gap: var(--gap-size);
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
   }
 }
 
@@ -1263,20 +1281,15 @@ button {
 .title {
   margin-left: auto;
   margin-right: auto;
+  margin-bottom: 30px;
+  font-size: 28px;
   font-weight: 700;
   line-height: 1.18;
   text-align: center;
   color: #212121;
 }
 
-@media screen and (max-width: 767px) {
-  .title {
-    margin-bottom: 30px;
-    font-size: 28px;
-  }
-}
-
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 1200px) {
   .title {
     margin-bottom: 50px;
     font-size: 36px;

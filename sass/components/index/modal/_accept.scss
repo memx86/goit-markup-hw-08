@@ -1,6 +1,6 @@
 .accept__item {
   margin-top: 20px;
-  @media screen and (min-width: 1199px) {
+  @media screen and (min-width: 1200px) {
     padding-left: 14px;
   }
   display: flex;
@@ -34,9 +34,12 @@
   }
 }
 .accept__label {
-  font-size: 14px;
+  font-size: 12px;
   line-height: 1.71;
   letter-spacing: 0.03em;
+  @media screen and (min-width: 1200px) {
+    font-size: 14px;
+  }
 }
 .accept__link {
   color: $accent-color;

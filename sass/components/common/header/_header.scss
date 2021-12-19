@@ -17,6 +17,9 @@
     padding-top: 16px;
     padding-bottom: 16px;
   }
+  @media screen and (min-width: 768px) {
+    margin-right: 93px;
+  }
 }
 // Кнопка-бургер
 .header__button {
@@ -90,8 +93,7 @@
   @media screen and (min-width: 768px) {
     display: flex;
     justify-content: space-between;
-    width: 66.6666%;
-    margin-left: auto;
+    width: 100%;
   }
 }
 .header__nav {
