@@ -632,7 +632,6 @@ button {
 
 @media screen and (max-width: 767px) {
   .header__item:not(:last-child) {
-    width: 100%;
     margin-bottom: 32px;
   }
 }
@@ -709,6 +708,12 @@ button {
     padding-bottom: 21px;
     font-size: 12px;
     line-height: 1.17;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .header__item--contacts:not(:last-child) {
+    margin-bottom: unset;
   }
 }
 
